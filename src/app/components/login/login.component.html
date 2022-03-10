@@ -1,0 +1,18 @@
+<div class="body">
+    <div class="wrap-login">
+        <img src="../../../assets/login.png" alt="Login">
+        <h1>Login</h1>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+             <mat-form-field appearance="fill" class="iput-width">
+                <mat-label>Usuario</mat-label>
+                <input matInput formControlName="username" required autocomplete="off" >
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="iput-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" required autocomplete="off">
+            </mat-form-field>
+            <br>
+            <button type="submit" mat-raised-button color="primary" class="iput-width button-login">Ingresar</button>
+        </form>
+    </div>
+</div>
