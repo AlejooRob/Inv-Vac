@@ -1,0 +1,117 @@
+<div class="container">
+  <mat-toolbar >
+    <span>{{isNew ? 'Crear usuario' : 'Actualizar'}}</span>
+  </mat-toolbar>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form" >
+    <mat-error *ngIf="sendInvalid" class="login-error">
+      Hubo un problema al enviar la información.
+    </mat-error>
+    <mat-grid-list cols=" 2" rowHeight="72px" gutterSize="20px">
+      <mat-grid-tile class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="firstName" required>
+          <mat-error>
+            Por favor ingrese un nombre válido
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="lastName" required>
+          <mat-error>
+            Por favor ingrese un apellido válido
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Cédula (usuario)</mat-label>
+          <input matInput formControlName="cardIdent" required>
+          <mat-error>
+            Por favor ingrese una cédula válida
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error>
+            Por favor ingrese un email válido
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Fecha de nacimiento</mat-label>
+          <input matInput formControlName="birthDate" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error>
+            Por favor ingrese una fecha válida
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Dirección</mat-label>
+          <input matInput formControlName="address">
+          <mat-error>
+            Por favor ingrese una dirección válida
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Teléfono</mat-label>
+          <input matInput formControlName="phone">
+          <mat-error>
+            Por favor ingrese un teléfono válido
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile class="view-user">
+        <mat-slide-toggle color="primary" formControlName="isVaccine">Estado de vacunación</mat-slide-toggle>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="f.isVaccine.value" class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Tipo de vacuna</mat-label>
+          <select formControlName="vaccine" matNativeControl>
+            <option value="Sputnik">Sputnik</option>
+            <option value="Astazeneca">AstraZeneca</option>
+            <option value="Pfizer">Pfizer</option>
+            <option value="Jhonson&Jhonson">Jhonson&Jhonson</option>
+          </select>
+          <mat-error>
+            Por favor seleccione una vacuna
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="f.isVaccine.value" class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Fecha de vacunación</mat-label>
+          <input matInput formControlName="vaccineDate" [matDatepicker]="pickerVaccine">
+          <mat-datepicker-toggle matSuffix [for]="pickerVaccine"></mat-datepicker-toggle>
+          <mat-datepicker #pickerVaccine></mat-datepicker>
+          <mat-error>
+            Por favor seleccione una fecha de vacunación
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile *ngIf="f.isVaccine.value" class="view-user">
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Número de dosis</mat-label>
+          <input matInput formControlName="vaccineTimes">
+          <mat-error>
+            Por favor ingrese el número de dosis
+          </mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button mat-raised-button color="primary" [disabled]='form.invalid'>{{isNew ? 'Crear' : 'Actualizar'}}</button>
+  </form>
+</div>

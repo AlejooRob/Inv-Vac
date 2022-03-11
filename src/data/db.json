@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "cardIdent": 1780926845,
+      "firstName": "Alejandros",
+      "lastName": "Robles",
+      "email": "correo@correo.com",
+      "birthDate": "1990-03-10T05:00:00.000Z",
+      "address": "Quito",
+      "phone": "0982262489",
+      "isVaccine": true,
+      "vaccine": "Astazeneca",
+      "vaccineDate": "2021-12-16T05:00:00.000Z",
+      "vaccineTimes": "2",
+      "isAdmin": true,
+      "password": 1780926845
+    },
+    {
+      "id": 2,
+      "cardIdent": 1814567889,
+      "firstName": "Juan",
+      "lastName": "Caceres",
+      "email": "correo1@correo.com",
+      "birthDate": null,
+      "address": null,
+      "phone": null,
+      "isVaccine": false,
+      "vaccine": null,
+      "vaccineDate": null,
+      "vaccineTimes": null,
+      "isAdmin": false
+    },
+    {
+      "id": 3,
+      "cardIdent": 1814567889,
+      "firstName": "Mario",
+      "lastName": "Escobar",
+      "email": "correo2@correo.com",
+      "birthDate": null,
+      "address": null,
+      "phone": null,
+      "isVaccine": false,
+      "vaccine": null,
+      "vaccineDate": null,
+      "vaccineTimes": null,
+      "isAdmin": false
+    }
+  ]
+}

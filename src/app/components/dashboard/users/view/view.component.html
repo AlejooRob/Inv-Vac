@@ -1,0 +1,22 @@
+<div *ngIf="user" class="container">
+  <mat-toolbar>
+    <span>{{user.firstName}} {{user.lastName}}</span>
+    <button mat-button color="primary" [routerLink]="['/dashboard/usuarios/actualizar', user.id]">Actualizar
+      datos</button>
+    <span class="spacer"></span>
+    <button *ngIf="router.snapshot.params.idUser" mat-stroked-button color="primary"
+      [routerLink]="['/dashboard/usuarios']">Atrás</button>
+  </mat-toolbar>
+
+  <!-- <mat-grid-list cols=" 2" rowHeight="8:1">
+    <mat-grid-tile class="view-user"><b>Cédula:</b> {{user.Identificación}}</mat-grid-tile>
+    <mat-grid-tile><b>Email:</b> {{user.email}}</mat-grid-tile>
+    <mat-grid-tile><b>Fecha de nacimiento:</b> {{user.birthDate}}</mat-grid-tile>
+    <mat-grid-tile><b>Dirección:</b> {{user.address}}</mat-grid-tile>
+    <mat-grid-tile><b>Teléfono:</b> {{user.phone}}</mat-grid-tile>
+    <mat-grid-tile><b>Estado de vacunación:</b> {{user.isVaccine ? 'Vacunado' : 'No Vacunado'}}</mat-grid-tile>
+    <mat-grid-tile><b>Vacuna:</b> {{user.vaccine}}</mat-grid-tile>
+    <mat-grid-tile><b>Fecha de vacunación:</b> {{user.vaccineDate}}</mat-grid-tile>
+    <mat-grid-tile><b>Dosis:</b> {{user.vaccineTimes}}</mat-grid-tile>
+  </mat-grid-list> -->
+</div>

@@ -20,3 +20,6 @@
 .button-login {
     height: 50px;
 }
+.login-spinner {
+    margin: 0 auto;
+}
