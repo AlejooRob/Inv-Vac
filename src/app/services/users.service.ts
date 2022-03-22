@@ -8,8 +8,10 @@ import { User } from '../interfaces/user';
 })
 export class UsersService {
   
-  private baseUrl ='http://localhost:3000/users'
-  constructor(private http: HttpClient) { }
+  private baseUrl ='http://localhost:3000/users';
+  
+  constructor(private http: HttpClient) {
+  }
 
   getAll(): Observable<User[]> {
     return this.http.get<any>(this.baseUrl);

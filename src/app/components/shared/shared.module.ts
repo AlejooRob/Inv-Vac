@@ -82,7 +82,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatButtonToggleModule,
     MatBadgeModule,
     MatChipsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatRippleModule
   ],
   exports: [
     MatFormFieldModule,
@@ -121,7 +122,8 @@ import { MatRippleModule } from '@angular/material/core';
     MatButtonToggleModule,
     MatBadgeModule,
     MatChipsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatRippleModule
   ]
 })
 export class SharedModule { }
